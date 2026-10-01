@@ -1,1 +1,2781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Shuttle Adventure | Luxury Qatar Tourism &amp; Private Tours Doha</title>
+  <meta name="description" content="Experience Qatar with Smart Shuttle Adventure. Premium Doha city tours, desert safaris, private chauffeur excursions, and VIP travel in Doha, Qatar.">
+  <meta property="og:title" content="Smart Shuttle Adventure | Luxury Qatar Tourism">
+  <meta property="og:description" content="Discover Qatar. Experience Adventure. Premium VIP tours, desert safaris, and luxury private transit in Doha.">
+  <meta property="og:type" content="website">
 
+  <!-- Google Fonts: Cinzel Decorative / Cormorant & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-surface: #0e131d;
+      --bg-card: rgba(16, 23, 37, 0.75);
+      --bg-glass: rgba(14, 19, 29, 0.85);
+      --gold-primary: #d4af37;
+      --gold-light: #f5df88;
+      --gold-dark: #aa820a;
+      --gold-gradient: linear-gradient(135deg, #f5df88 0%, #d4af37 50%, #997412 100%);
+      --text-white: #ffffff;
+      --text-cream: #f4f4f0;
+      --text-muted: #94a3b8;
+      --border-gold: rgba(212, 175, 55, 0.22);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --shadow-luxury: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.08);
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-dark);
+      color: var(--text-cream);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-cream);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient luxury glow background */
+    .bg-ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 45%),
+                  radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.03) 0%, transparent 50%);
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .font-display {
+      font-family: var(--font-display);
+      letter-spacing: 0.03em;
+      color: var(--text-white);
+      text-wrap: balance;
+    }
+
+    .gold-text {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold-primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--gold-primary);
+      opacity: 0.6;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      padding: 0.875rem 1.875rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      border: 1px solid transparent;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #080c14;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(212, 175, 55, 0.4);
+      filter: brightness(1.06);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-white);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      color: var(--gold-light);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #062811;
+      font-weight: 700;
+    }
+
+    .btn-whatsapp:hover {
+      background: #2fe673;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    /* Glass Cards */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      box-shadow: var(--shadow-luxury);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.14);
+    }
+
+    /* Header & Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: var(--transition);
+      padding: 1.25rem 0;
+      background: transparent;
+    }
+
+    .header.scrolled {
+      background: rgba(7, 9, 14, 0.92);
+      backdrop-filter: blur(20px);
+      padding: 0.875rem 0;
+      border-bottom: 1px solid var(--border-gold);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-white);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+      border: 1px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-title span {
+      color: var(--gold-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-cream);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold-primary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 360px;
+      height: 100vh;
+      background: rgba(10, 14, 22, 0.98);
+      backdrop-filter: blur(25px);
+      border-left: 1px solid var(--border-gold);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem 2rem;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .mobile-menu.open {
+      right: 0;
+    }
+
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .mobile-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mobile-nav-link {
+      color: var(--text-white);
+      font-size: 1.125rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--gold-primary);
+      padding-left: 0.5rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 0 5rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.05);
+      animation: slowZoom 24s infinite alternate ease-in-out;
+      filter: brightness(0.65) contrast(1.1);
+    }
+
+    @keyframes slowZoom {
+      0% { transform: scale(1.02); }
+      100% { transform: scale(1.12); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, 
+        rgba(7, 9, 14, 0.75) 0%, 
+        rgba(7, 9, 14, 0.45) 45%, 
+        rgba(7, 9, 14, 0.95) 100%);
+    }
+
+    #particles-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(12px);
+      margin-bottom: 2rem;
+      font-size: 0.8125rem;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-desc {
+      font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+      color: #e2e8f0;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .trust-item svg {
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .nav-links, .nav-actions .btn-outline {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-trust-bar {
+        gap: 1.25rem;
+      }
+    }
+
+    /* 2. FEATURED TOURS */
+    .tours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .tour-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .tour-image-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .tour-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tour-card:hover .tour-image {
+      transform: scale(1.08);
+    }
+
+    .tour-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    .tour-duration {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      color: #e2e8f0;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .tour-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .tour-title {
+      font-size: 1.375rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .tour-desc {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .tour-highlights {
+      list-style: none;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .tour-highlights li {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .tour-highlights li svg {
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .tour-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .tour-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .price-val {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    /* 3. ABOUT SECTION */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image-col {
+      position: relative;
+    }
+
+    .about-image-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-luxury);
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-badge-card {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: rgba(14, 19, 29, 0.95);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(16px);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      max-width: 240px;
+    }
+
+    .about-badge-num {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .about-badge-text {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .about-content-col h3 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .about-p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .stat-item-num {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-item-label {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 4. WHY CHOOSE US */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .feature-card {
+      padding: 2.25rem 1.75rem;
+      position: relative;
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon {
+      background: var(--gold-gradient);
+      color: #080c14;
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* 5. EXPLORE QATAR */
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .explore-card {
+      position: relative;
+      height: 320px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-luxury);
+      cursor: pointer;
+    }
+
+    .explore-card.span-2 {
+      grid-column: span 2;
+    }
+
+    .explore-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .explore-card:hover .explore-img {
+      transform: scale(1.1);
+    }
+
+    .explore-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(7, 9, 14, 0.5) 40%, rgba(7, 9, 14, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.75rem;
+      transition: var(--transition);
+    }
+
+    .explore-card:hover .explore-overlay {
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(7, 9, 14, 0.4) 30%, rgba(7, 9, 14, 0.98) 100%);
+    }
+
+    .explore-location {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .explore-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 0.5rem;
+    }
+
+    .explore-desc {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    /* 6. LUXURY GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      height: 250px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 9, 14, 0.75);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-zoom-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      color: #07090e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      transform: scale(0.8);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-zoom-icon {
+      transform: scale(1);
+    }
+
+    .gallery-caption {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 6, 10, 0.96);
+      backdrop-filter: blur(20px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 75vh;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      margin-top: 1rem;
+      color: var(--gold-light);
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      text-align: center;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lightbox-close:hover {
+      color: var(--gold-primary);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(14, 19, 29, 0.8);
+      border: 1px solid var(--border-gold);
+      color: var(--text-white);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lightbox-nav:hover {
+      background: var(--gold-gradient);
+      color: #07090e;
+    }
+
+    .lightbox-prev { left: 2rem; }
+    .lightbox-next { right: 2rem; }
+
+    /* 7. TESTIMONIALS SLIDER */
+    .testimonial-carousel {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .stars-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.35rem;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-text {
+      font-size: 1.1875rem;
+      line-height: 1.8;
+      color: #f1f5f9;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .author-name {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .author-location {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .carousel-btn {
+      background: rgba(14, 19, 29, 0.8);
+      border: 1px solid var(--border-gold);
+      color: var(--text-white);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .carousel-btn:hover {
+      background: var(--gold-gradient);
+      color: #07090e;
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .carousel-dot.active {
+      background: var(--gold-primary);
+      width: 28px;
+      border-radius: 9999px;
+    }
+
+    /* 8. FAQ ACCORDION */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.active {
+      border-color: var(--border-gold);
+      background: rgba(18, 26, 42, 0.85);
+    }
+
+    .faq-header {
+      width: 100%;
+      text-align: left;
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .faq-header:hover {
+      color: var(--gold-light);
+    }
+
+    .faq-icon {
+      color: var(--gold-primary);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-content {
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    /* 9. BOOKING & CONTACT */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-box {
+      padding: 2.25rem;
+    }
+
+    .contact-card-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .contact-detail-text h4 {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-detail-text a, .contact-detail-text p {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .contact-detail-text a:hover {
+      color: var(--gold-light);
+    }
+
+    .booking-form {
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(7, 9, 14, 0.6);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      padding: 0.875rem 1rem;
+      color: var(--text-white);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+      background: rgba(14, 19, 29, 0.9);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* 10. FOOTER */
+    .footer {
+      background: #040609;
+      border-top: 1px solid var(--border-gold);
+      padding: 5rem 0 2rem;
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand-desc {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      margin: 1.25rem 0 1.5rem;
+      max-width: 380px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-primary);
+      padding-left: 0.25rem;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Floating WhatsApp & Back to top */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      color: #062811;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+      z-index: 99;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 6.5rem;
+      right: 2.25rem;
+      background: rgba(14, 19, 29, 0.85);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 98;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--gold-gradient);
+      color: #07090e;
+      transform: translateY(-3px);
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(14, 19, 29, 0.95);
+      border: 1px solid var(--gold-primary);
+      color: var(--text-white);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 992px) {
+      .about-wrap, .contact-wrap {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .explore-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .explore-card.span-2 {
+        grid-column: span 1;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .about-badge-card {
+        right: 1rem;
+        bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .explore-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-ctas .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient background effect -->
+  <div class="bg-ambient"></div>
+
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="brand">
+          <div class="brand-mark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <div class="brand-title">SMART SHUTTLE <span>ADVENTURE</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#tours" class="nav-link">Tours</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
+          <li><a href="#explore" class="nav-link">Explore Qatar</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.942.556 3.754 1.516 5.293L2 22l4.828-1.488a9.98 9.98 0 0 0 5.203 1.523h.004c5.535 0 10.031-4.496 10.031-10.031C22.066 6.496 17.566 2 12.031 2zm5.836 14.195c-.242.684-1.402 1.309-1.934 1.391-.496.074-1.129.105-3.664-.945-3.242-1.344-5.328-4.648-5.492-4.863-.156-.215-1.309-1.742-1.309-3.324 0-1.582.828-2.363 1.125-2.684.297-.32.652-.402.871-.402.219 0 .441.004.633.012.207.008.484-.078.754.57.281.672.961 2.348 1.047 2.52.086.172.145.375.031.602-.113.227-.172.367-.34.566-.172.199-.363.445-.516.598-.172.172-.352.359-.152.703.203.344.898 1.48 1.926 2.395 1.328 1.184 2.449 1.551 2.793 1.723.344.172.547.145.75-.086.203-.234.871-1.016 1.102-1.363.23-.348.461-.293.773-.176.312.117 1.977.934 2.316 1.105.34.172.566.258.652.402.086.145.086.844-.156 1.527z"/>
+            </svg>
+            <span>+974 7008 0102</span>
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="brand" style="margin-bottom: 2rem;">
+      <div class="brand-title">SMART SHUTTLE <span>ADVENTURE</span></div>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#tours" class="mobile-nav-link">Tours</a></li>
+      <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+      <li><a href="#why-us" class="mobile-nav-link">Why Choose Us</a></li>
+      <li><a href="#explore" class="mobile-nav-link">Explore Qatar</a></li>
+      <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="#reviews" class="mobile-nav-link">Guest Reviews</a></li>
+      <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact &amp; Book</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+        WhatsApp Concierge
+      </a>
+      <a href="tel:+97470080102" class="btn btn-outline" style="width: 100%;">
+        Call: +974 7008 0102
+      </a>
+    </div>
+  </div>
+
+  <!-- 1. LUXURY HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="src/assets/images/hero_doha_skyline_1790883173308.jpg" alt="Doha Qatar West Bay Skyline at Twilight" class="hero-img" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?auto=format&fit=crop&w=1920&q=80'">
+      <div class="hero-overlay"></div>
+    </div>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span>Doha, Qatar</span>
+          <span style="opacity: 0.4;">|</span>
+          <span>Premier Luxury Tourism</span>
+        </div>
+
+        <h1 class="hero-title reveal">
+          Discover Qatar.<br>
+          <span class="gold-text">Experience Adventure.</span>
+        </h1>
+
+        <p class="hero-desc reveal">
+          From the golden dunes of the Inland Sea to the futuristic skyline of West Bay and historic Souq Waqif. Immerse yourself in authentic Arabian hospitality with Smart Shuttle Adventure’s luxury fleet and licensed concierge guides.
+        </p>
+
+        <div class="hero-ctas reveal">
+          <a href="#tours" class="btn btn-gold">
+            <span>Explore Tours</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="https://wa.me/97470080102?text=Hello%20Smart%20Shuttle%20Adventure,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20luxury%20tour%20in%20Qatar." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.942.556 3.754 1.516 5.293L2 22l4.828-1.488a9.98 9.98 0 0 0 5.203 1.523h.004c5.535 0 10.031-4.496 10.031-10.031C22.066 6.496 17.566 2 12.031 2zm5.836 14.195c-.242.684-1.402 1.309-1.934 1.391-.496.074-1.129.105-3.664-.945-3.242-1.344-5.328-4.648-5.492-4.863-.156-.215-1.309-1.742-1.309-3.324 0-1.582.828-2.363 1.125-2.684.297-.32.652-.402.871-.402.219 0 .441.004.633.012.207.008.484-.078.754.57.281.672.961 2.348 1.047 2.52.086.172.145.375.031.602-.113.227-.172.367-.34.566-.172.199-.363.445-.516.598-.172.172-.352.359-.152.703.203.344.898 1.48 1.926 2.395 1.328 1.184 2.449 1.551 2.793 1.723.344.172.547.145.75-.086.203-.234.871-1.016 1.102-1.363.23-.348.461-.293.773-.176.312.117 1.977.934 2.316 1.105.34.172.566.258.652.402.086.145.086.844-.156 1.527z"/>
+            </svg>
+            <span>Book on WhatsApp</span>
+          </a>
+          <a href="#contact" class="btn btn-outline">Custom Itinerary</a>
+        </div>
+
+        <div class="hero-trust-bar reveal">
+          <div class="trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Licensed Qatar Tour Operator</span>
+          </div>
+          <div class="trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>24/7 VIP Concierge</span>
+          </div>
+          <div class="trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <span>Executive Climate-Controlled Fleet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FEATURED TOURS -->
+  <section id="tours">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">Curated Journeys</div>
+        <h2 class="section-title reveal">Featured <span class="gold-text">Qatar Tours</span></h2>
+        <p class="section-subtitle reveal">Handcrafted luxury experiences tailored to your desires. Travel in peerless comfort with dedicated chauffeurs and authorized local guides.</p>
+      </div>
+
+      <div class="tours-grid">
+        <!-- City Tour -->
+        <div class="glass-card tour-card reveal">
+          <div class="tour-image-wrap">
+            <span class="tour-tag">Cultural &amp; Modern</span>
+            <span class="tour-duration">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              4 - 5 Hours
+            </span>
+            <img src="src/assets/images/tour_city_culture_1790883200965.jpg" alt="Doha City Tour - Museum of Islamic Art and Katara" class="tour-image" onerror="this.src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Doha City &amp; Heritage Tour</h3>
+            <p class="tour-desc">A refined journey exploring Qatar's past and dazzling future. From the fragrant corridors of Souq Waqif to the Venetian canals of The Pearl-Qatar.</p>
+            <ul class="tour-highlights">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Museum of Islamic Art &amp; Dhow Corniche</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Souq Waqif Spice, Falcon &amp; Gold Souq</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Katara Cultural Village &amp; The Pearl-Qatar</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Chilled refreshments &amp; VIP climate van</span>
+              </li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="price-label">Experience Type</span>
+                <span class="price-val">City Tour</span>
+              </div>
+              <button class="btn btn-gold btn-book-trigger" data-tour="Doha City & Heritage Tour">
+                <span>Book Now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group Tour (Desert Safari) -->
+        <div class="glass-card tour-card reveal">
+          <div class="tour-image-wrap">
+            <span class="tour-tag">Adrenaline &amp; Nature</span>
+            <span class="tour-duration">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              5 - 7 Hours
+            </span>
+            <img src="src/assets/images/tour_desert_safari_1790883187724.jpg" alt="Qatar Desert Safari and Khor Al Adaid Inland Sea" class="tour-image" onerror="this.src='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Desert Safari &amp; Inland Sea</h3>
+            <p class="tour-desc">Traverse the towering singing dunes of the southern desert to reach Khor Al Adaid—where turquoise ocean tides embrace pristine golden desert.</p>
+            <ul class="tour-highlights">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Thrilling dune bashing with certified captains</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Khor Al Adaid UNESCO Inland Sea visit</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Arabian camel ride &amp; desert sunset tea</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Traditional Bedouin VIP camp access</span>
+              </li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="price-label">Experience Type</span>
+                <span class="price-val">Group Tour</span>
+              </div>
+              <button class="btn btn-gold btn-book-trigger" data-tour="Desert Safari & Inland Sea">
+                <span>Book Now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Private Tour -->
+        <div class="glass-card tour-card reveal">
+          <div class="tour-image-wrap">
+            <span class="tour-tag">Exclusive VIP</span>
+            <span class="tour-duration">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Flexible / Full Day
+            </span>
+            <img src="src/assets/images/tour_private_luxury_1790883212559.jpg" alt="Private Luxury Chauffeur and VIP Tour in Doha" class="tour-image" onerror="this.src='https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Private Bespoke VIP Chauffeur</h3>
+            <p class="tour-desc">A customized private tour designed entirely around your schedule. Executive black van/SUV, personal concierge driver, and seamless door-to-door luxury.</p>
+            <ul class="tour-highlights">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated Mercedes V-Class / Luxury SUV</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Fully tailored itinerary &amp; stops</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Airport VIP meet &amp; greet or hotel transit</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Multilingual concierge guide upon request</span>
+              </li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="price-label">Experience Type</span>
+                <span class="price-val">Private Tour</span>
+              </div>
+              <button class="btn btn-gold btn-book-trigger" data-tour="Private Bespoke VIP Chauffeur">
+                <span>Book Now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABOUT SMART SHUTTLE ADVENTURE -->
+  <section id="about" style="background: linear-gradient(180deg, transparent 0%, rgba(14, 19, 29, 0.4) 50%, transparent 100%);">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="about-image-col reveal">
+          <div class="about-image-frame">
+            <img src="src/assets/images/tour_private_luxury_1790883212559.jpg" alt="Smart Shuttle Adventure Chauffeur and Concierge in Doha Qatar" onerror="this.src='https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="about-badge-card">
+            <div class="about-badge-num">100%</div>
+            <div class="about-badge-text">Dedicated Private Fleet &amp; Licensed Multilingual Guides in Doha</div>
+          </div>
+        </div>
+
+        <div class="about-content-col reveal">
+          <div class="section-eyebrow">Distinguished Hospitality</div>
+          <h3>Setting the Benchmark for <span class="gold-text">Luxury Tourism in Qatar</span></h3>
+          <p class="about-p">
+            Based in the vibrant heart of Doha, <strong>Smart Shuttle Adventure</strong> crafts unforgettable journeys throughout the State of Qatar. We bridge Arabian tradition with international VIP standards, ensuring every guest experiences Qatar’s beauty with complete peace of mind.
+          </p>
+          <p class="about-p">
+            Whether you are on a Doha layover exploring the iconic Corniche, seeking an exhilarating dune expedition across Khor Al Adaid, or requiring executive chauffeur transit for business delegations, our dedicated concierge team delivers impeccable punctuality, pristine vehicles, and rich cultural storytelling.
+          </p>
+
+          <div class="about-stats">
+            <div>
+              <div class="stat-item-num">12,500+</div>
+              <div class="stat-item-label">Delighted Guests Hosted</div>
+            </div>
+            <div>
+              <div class="stat-item-num">100%</div>
+              <div class="stat-item-label">Safety &amp; Comfort Rating</div>
+            </div>
+            <div>
+              <div class="stat-item-num">4.9 / 5</div>
+              <div class="stat-item-label">Verified Traveler Score</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#contact" class="btn btn-gold">Inquire With Our Team</a>
+            <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Direct WhatsApp Chat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY CHOOSE US -->
+  <section id="why-us">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">The Smart Shuttle Standard</div>
+        <h2 class="section-title reveal">Why Travelers <span class="gold-text">Choose Us</span></h2>
+        <p class="section-subtitle reveal">Every journey is engineered around discretion, exceptional safety, personalized timing, and authentic local immersion.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="glass-card feature-card reveal">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+          <h3 class="feature-title">Professional Service</h3>
+          <p class="feature-desc">Formally attired, licensed local guides and chauffeurs committed to punctuality, polite etiquette, and supreme discretion.</p>
+        </div>
+
+        <div class="glass-card feature-card reveal">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+          <h3 class="feature-title">Comfortable Travel</h3>
+          <p class="feature-desc">Spotless, late-model air-conditioned luxury vans and 4x4 SUVs stocked with chilled bottled water, cold towels, and onboard Wi-Fi.</p>
+        </div>
+
+        <div class="glass-card feature-card reveal">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <h3 class="feature-title">Flexible Tours</h3>
+          <p class="feature-desc">Adaptable itineraries catering to flight layovers, cruise port arrivals, private VIPs, corporate delegates, and families.</p>
+        </div>
+
+        <div class="glass-card feature-card reveal">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <h3 class="feature-title">Local Experience</h3>
+          <p class="feature-desc">Genuine cultural stories, heritage knowledge, and access to authentic Qatari culinary treasures and Bedouin traditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. EXPLORE QATAR -->
+  <section id="explore" style="background: linear-gradient(180deg, transparent 0%, rgba(14, 19, 29, 0.4) 50%, transparent 100%);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">Iconic Destinations</div>
+        <h2 class="section-title reveal">Explore <span class="gold-text">Qatar Wonders</span></h2>
+        <p class="section-subtitle reveal">Captivating contrasts between historic architectural masterpieces, tranquil emerald coastlines, and sweeping desert expanses.</p>
+      </div>
+
+      <div class="explore-grid">
+        <!-- 1. Doha Skyline -->
+        <div class="explore-card span-2 reveal">
+          <img src="src/assets/images/hero_doha_skyline_1790883173308.jpg" alt="Doha Skyline and Corniche at Night" class="explore-img" onerror="this.src='https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?auto=format&fit=crop&w=1200&q=80'">
+          <div class="explore-overlay">
+            <span class="explore-location">West Bay Promenade</span>
+            <h3 class="explore-title">Doha Skyline &amp; Corniche</h3>
+            <p class="explore-desc">Gaze upon futuristic illuminated architectural towers reflecting over the Persian Gulf waters during sunset dhow cruises.</p>
+          </div>
+        </div>
+
+        <!-- 2. Souq Waqif -->
+        <div class="explore-card reveal">
+          <img src="src/assets/images/experience_souq_waqif_1790883223489.jpg" alt="Souq Waqif Night Market and Heritage Alleys" class="explore-img" onerror="this.src='https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80'">
+          <div class="explore-overlay">
+            <span class="explore-location">Historic Old Doha</span>
+            <h3 class="explore-title">Souq Waqif</h3>
+            <p class="explore-desc">Centuries of Arabian commerce, aromatic saffron stalls, falconry hospitals, and bustling outdoor shisha cafes.</p>
+          </div>
+        </div>
+
+        <!-- 3. The Pearl-Qatar -->
+        <div class="explore-card reveal">
+          <img src="src/assets/images/tour_private_luxury_1790883212559.jpg" alt="The Pearl-Qatar Luxury Marina and Waterfront" class="explore-img" onerror="this.src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'">
+          <div class="explore-overlay">
+            <span class="explore-location">Porto Arabia</span>
+            <h3 class="explore-title">The Pearl-Qatar</h3>
+            <p class="explore-desc">Riviera-style luxury living, mega-yacht moorings, designer boutiques, and Mediterranean dining promenades.</p>
+          </div>
+        </div>
+
+        <!-- 4. Desert Adventures -->
+        <div class="explore-card span-2 reveal">
+          <img src="src/assets/images/tour_desert_safari_1790883187724.jpg" alt="Desert Dunes and Khor Al Adaid Sunset" class="explore-img" onerror="this.src='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80'">
+          <div class="explore-overlay">
+            <span class="explore-location">Khor Al Adaid UNESCO Reserve</span>
+            <h3 class="explore-title">Desert Adventures &amp; Inland Sea</h3>
+            <p class="explore-desc">One of only three places on Earth where oceanic tides engulf desert dunes. Unmatched stargazing and thrilling dune safaris.</p>
+          </div>
+        </div>
+
+        <!-- 5. Qatar Museums -->
+        <div class="explore-card reveal">
+          <img src="src/assets/images/tour_city_culture_1790883200965.jpg" alt="Museum of Islamic Art and National Museum" class="explore-img" onerror="this.src='https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80'">
+          <div class="explore-overlay">
+            <span class="explore-location">MIA Park &amp; Corniche</span>
+            <h3 class="explore-title">Qatar Museums</h3>
+            <p class="explore-desc">World-class art treasures spanning 1,400 years housed inside I.M. Pei’s geometric masterpiece and Jean Nouvel’s Desert Rose.</p>
+          </div>
+        </div>
+
+        <!-- 6. Qatar Coastline -->
+        <div class="explore-card span-2 reveal">
+          <img src="src/assets/images/hero_doha_skyline_1790883173308.jpg" alt="Persian Gulf Coastline and Katara Beach" class="explore-img" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'">
+          <div class="explore-overlay">
+            <span class="explore-location">Arabian Gulf Coastline</span>
+            <h3 class="explore-title">Qatar Coastline &amp; Marine Beauty</h3>
+            <p class="explore-desc">Pristine turquoise lagoons, traditional wooden dhow cruises, and peaceful mangrove wetlands teeming with wildlife.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. LUXURY GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">Visual Splendor</div>
+        <h2 class="section-title reveal">Qatar <span class="gold-text">Moments Gallery</span></h2>
+        <p class="section-subtitle reveal">A visual odyssey across Qatar’s extraordinary landscapes, ancient alleyways, and modern architectural elegance. Click any image to view in high resolution.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" data-img="src/assets/images/hero_doha_skyline_1790883173308.jpg" data-caption="West Bay Doha Skyline & Traditional Dhow at Sunset">
+          <img src="src/assets/images/hero_doha_skyline_1790883173308.jpg" alt="West Bay Doha Skyline" onerror="this.src='https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?auto=format&fit=crop&w=800&q=80'">
+          <div class="gallery-item-overlay">
+            <div class="gallery-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <span class="gallery-caption">Doha Skyline Horizon</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-img="src/assets/images/tour_desert_safari_1790883187724.jpg" data-caption="Golden Dune Bashing & Inland Sea Khor Al Adaid">
+          <img src="src/assets/images/tour_desert_safari_1790883187724.jpg" alt="Dune Bashing Safari" onerror="this.src='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'">
+          <div class="gallery-item-overlay">
+            <div class="gallery-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <span class="gallery-caption">Desert Safari Expedition</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-img="src/assets/images/tour_city_culture_1790883200965.jpg" data-caption="Museum of Islamic Art Geometric Architecture">
+          <img src="src/assets/images/tour_city_culture_1790883200965.jpg" alt="Museum of Islamic Art" onerror="this.src='https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80'">
+          <div class="gallery-item-overlay">
+            <div class="gallery-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <span class="gallery-caption">Islamic Art Architecture</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-img="src/assets/images/experience_souq_waqif_1790883223489.jpg" data-caption="Atmospheric Evening Walk inside Souq Waqif Heritage Alleys">
+          <img src="src/assets/images/experience_souq_waqif_1790883223489.jpg" alt="Souq Waqif Night Ambiance" onerror="this.src='https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80'">
+          <div class="gallery-item-overlay">
+            <div class="gallery-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <span class="gallery-caption">Souq Waqif Evening Ambiance</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-img="src/assets/images/tour_private_luxury_1790883212559.jpg" data-caption="Executive Chauffeur Transit & The Pearl-Qatar Marina">
+          <img src="src/assets/images/tour_private_luxury_1790883212559.jpg" alt="Executive Mercedes Van & The Pearl" onerror="this.src='https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'">
+          <div class="gallery-item-overlay">
+            <div class="gallery-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <span class="gallery-caption">VIP Concierge Transportation</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-img="src/assets/images/hero_doha_skyline_1790883173308.jpg" data-caption="Illuminated Doha Corniche Waterfront at Dusk">
+          <img src="src/assets/images/hero_doha_skyline_1790883173308.jpg" alt="Doha Corniche Reflection" onerror="this.src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'">
+          <div class="gallery-item-overlay">
+            <div class="gallery-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <span class="gallery-caption">Arabian Gulf Reflections</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TESTIMONIALS -->
+  <section id="reviews" style="background: linear-gradient(180deg, transparent 0%, rgba(14, 19, 29, 0.4) 50%, transparent 100%);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">Guest Experiences</div>
+        <h2 class="section-title reveal">What Our <span class="gold-text">Guests Say</span></h2>
+        <p class="section-subtitle reveal">Verified feedback from international travelers, business executives, and visiting families.</p>
+      </div>
+
+      <div class="testimonial-carousel reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="stars-row">
+                ★★★★★
+              </div>
+              <p class="quote-text">
+                “Our 6-hour private layover tour with Smart Shuttle Adventure was phenomenal. Our driver met us right outside Hamad International Airport arrivals with chilled towels and cold water. We visited Souq Waqif, Katara, and The Pearl without any rushing. The Mercedes was immaculate. Highly recommended!”
+              </p>
+              <div class="author-name">Alexander &amp; Sophie Wright</div>
+              <div class="author-location">London, United Kingdom · Private Layover Tour</div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="stars-row">
+                ★★★★★
+              </div>
+              <p class="quote-text">
+                “The desert safari to Khor Al Adaid was the undisputed highlight of our Gulf vacation. The dune driving was thrilling yet felt completely safe with our expert captain. Watching the golden sun sink into the Arabian waters was unforgettable. Outstanding professionalism from booking on WhatsApp to drop-off.”
+              </p>
+              <div class="author-name">Dr. Marcus Weber</div>
+              <div class="author-location">Munich, Germany · Desert Safari &amp; Inland Sea</div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="stars-row">
+                ★★★★★
+              </div>
+              <p class="quote-text">
+                “We hired Smart Shuttle Adventure for corporate VIP delegation transportation in Doha during an international summit. Pristine executive vehicles, always 15 minutes early, and chauffeurs who know every shortcut in West Bay. Truly first-class luxury concierge service.”
+              </p>
+              <div class="author-name">Hassan Al-Mansoor</div>
+              <div class="author-location">Dubai, UAE · Executive Fleet Chauffeur</div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="stars-row">
+                ★★★★★
+              </div>
+              <p class="quote-text">
+                “Traveling with elderly parents can be challenging, but Smart Shuttle made our Doha cultural tour effortless. Our guide provided deep historical context at the National Museum and ensured easy walking routes at Souq Waqif. Thank you for such warm Qatari hospitality!”
+              </p>
+              <div class="author-name">Elena Rostova</div>
+              <div class="author-location">Toronto, Canada · Doha Cultural City Tour</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevTestimonial" aria-label="Previous review">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+          <button class="carousel-btn" id="nextTestimonial" aria-label="Next review">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ ACCORDION -->
+  <section id="faq">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">Answers to Common Inquiries</div>
+        <h2 class="section-title reveal">Frequently Asked <span class="gold-text">Questions</span></h2>
+        <p class="section-subtitle reveal">Everything you need to know about our luxury tours, private transit, booking procedure, and fleet standards.</p>
+      </div>
+
+      <div class="faq-container">
+        <!-- Q1 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>What tours and experiences does Smart Shuttle Adventure provide?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              We specialize in Doha City &amp; Heritage Tours (Souq Waqif, Katara, The Pearl, National Museum), Khor Al Adaid Inland Sea Desert Safaris (dune bashing, camel treks, sunset Bedouin camps), Airport Transit &amp; Layover Excursions, and Private VIP Executive Chauffeur services across Qatar.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>How do Private Tours work and can we customize our itinerary?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Absolutely. Our Private Tours are 100% customizable. You have dedicated access to our executive vehicle and chauffeur for your reserved duration. We can tailor stops around specific museums, fine dining reservations, architectural landmarks, or shopping centers to match your preferences.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>Are your desert safaris suitable for families with children or seniors?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Yes. We offer customized driving intensities. For families with young children or guests preferring a gentle experience, our licensed captains conduct a smooth scenic desert drive without high-adrenaline dune bashing, leading directly to the peaceful Inland Sea and comfortable traditional camp.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>What vehicles are utilized for your tours and transfers?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              We maintain an exclusive, late-model fleet of luxury air-conditioned vehicles, including executive Mercedes-Benz V-Class passenger vans, luxury Land Cruiser 4x4 SUVs for desert terrain, and executive VIP sedans. Every vehicle is sanitized before each tour and stocked with complimentary refreshments.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>How can I book a tour and what is the payment process?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Booking is seamless. You can send a direct WhatsApp message to +974 7008 0102 or submit our booking form below. Our concierge team responds within minutes to confirm availability, timings, and vehicle details. We accept major credit cards, bank transfers, and cash in Qatari Riyals or USD.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>Do you provide airport pick-up from Hamad International Airport (DOH)?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Yes! We provide 24/7 meet-and-greet airport pick-up and drop-off directly from Hamad International Airport or Doha Port Cruise Terminal to any hotel or residence in Doha, as well as direct airport-to-tour layover journeys.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. BOOKING / CONTACT -->
+  <section id="contact" style="background: linear-gradient(180deg, transparent 0%, rgba(14, 19, 29, 0.5) 50%, #040609 100%);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-eyebrow reveal">Reserve Your Experience</div>
+        <h2 class="section-title reveal">Book Your <span class="gold-text">Qatar Adventure</span></h2>
+        <p class="section-subtitle reveal">Contact our Doha concierge team to plan your tailored experience or book instantly via WhatsApp.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <!-- Contact Information -->
+        <div class="contact-info-col reveal">
+          <div class="glass-card contact-box">
+            <h3 class="contact-card-title">Smart Shuttle Adventure</h3>
+            <p style="color: var(--text-muted); font-size: 0.9375rem; line-height: 1.7;">
+              Doha's trusted premier tourism and luxury transport provider. Dedicated to authentic Qatari hospitality and seamless luxury travel.
+            </p>
+
+            <ul class="contact-detail-list">
+              <li class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Headquarters</h4>
+                  <p>Doha, State of Qatar</p>
+                </div>
+              </li>
+
+              <li class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Telephone &amp; Hotlines</h4>
+                  <a href="tel:+97470080102">+974 7008 0102</a>
+                </div>
+              </li>
+
+              <li class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.942.556 3.754 1.516 5.293L2 22l4.828-1.488a9.98 9.98 0 0 0 5.203 1.523h.004c5.535 0 10.031-4.496 10.031-10.031C22.066 6.496 17.566 2 12.031 2zm5.836 14.195c-.242.684-1.402 1.309-1.934 1.391-.496.074-1.129.105-3.664-.945-3.242-1.344-5.328-4.648-5.492-4.863-.156-.215-1.309-1.742-1.309-3.324 0-1.582.828-2.363 1.125-2.684.297-.32.652-.402.871-.402.219 0 .441.004.633.012.207.008.484-.078.754.57.281.672.961 2.348 1.047 2.52.086.172.145.375.031.602-.113.227-.172.367-.34.566-.172.199-.363.445-.516.598-.172.172-.352.359-.152.703.203.344.898 1.48 1.926 2.395 1.328 1.184 2.449 1.551 2.793 1.723.344.172.547.145.75-.086.203-.234.871-1.016 1.102-1.363.23-.348.461-.293.773-.176.312.117 1.977.934 2.316 1.105.34.172.566.258.652.402.086.145.086.844-.156 1.527z"/></svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Official WhatsApp</h4>
+                  <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer">+974 7008 0102</a>
+                </div>
+              </li>
+            </ul>
+
+            <div style="margin-top: 2rem;">
+              <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+                Chat on WhatsApp Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="contact-form-col reveal">
+          <form class="glass-card booking-form" id="bookingForm">
+            <h3 style="font-size: 1.375rem; margin-bottom: 1.5rem; color: var(--gold-light);">Request Tour Reservation</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="guestName">Your Full Name *</label>
+                <input type="text" id="guestName" class="form-input" placeholder="e.g. John Smith" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="guestPhone">WhatsApp / Phone *</label>
+                <input type="tel" id="guestPhone" class="form-input" placeholder="e.g. +974 7008 0102" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="tourType">Tour Experience *</label>
+                <select id="tourType" class="form-select" required>
+                  <option value="" disabled selected>Select a tour package</option>
+                  <option value="Doha City & Heritage Tour">Doha City &amp; Heritage Tour (4-5 hrs)</option>
+                  <option value="Desert Safari & Inland Sea">Desert Safari &amp; Inland Sea (5-7 hrs)</option>
+                  <option value="Private Bespoke VIP Chauffeur">Private Bespoke VIP Chauffeur</option>
+                  <option value="Hamad Airport Layover Tour">Hamad Airport Layover Tour</option>
+                  <option value="Custom Group Itinerary">Custom Group Itinerary</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="preferredDate">Preferred Date *</label>
+                <input type="date" id="preferredDate" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guestCount">Number of Guests</label>
+              <select id="guestCount" class="form-select">
+                <option value="1 - 2 Guests (Executive Car / SUV)">1 - 2 Guests (Executive Car / SUV)</option>
+                <option value="3 - 5 Guests (Family / VIP SUV)">3 - 5 Guests (Family / VIP SUV)</option>
+                <option value="6 - 10 Guests (Luxury Van)">6 - 10 Guests (Luxury Van)</option>
+                <option value="10+ Guests (Large Group)">10+ Guests (Large Group)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guestMessage">Special Requests / Pick-up Location</label>
+              <textarea id="guestMessage" class="form-textarea" rows="3" placeholder="Hotel name, flight details, or specific places you want to visit..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%;">
+              <span>Confirm &amp; Send on WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.942.556 3.754 1.516 5.293L2 22l4.828-1.488a9.98 9.98 0 0 0 5.203 1.523h.004c5.535 0 10.031-4.496 10.031-10.031C22.066 6.496 17.566 2 12.031 2zm5.836 14.195c-.242.684-1.402 1.309-1.934 1.391-.496.074-1.129.105-3.664-.945-3.242-1.344-5.328-4.648-5.492-4.863-.156-.215-1.309-1.742-1.309-3.324 0-1.582.828-2.363 1.125-2.684.297-.32.652-.402.871-.402.219 0 .441.004.633.012.207.008.484-.078.754.57.281.672.961 2.348 1.047 2.52.086.172.145.375.031.602-.113.227-.172.367-.34.566-.172.199-.363.445-.516.598-.172.172-.352.359-.152.703.203.344.898 1.48 1.926 2.395 1.328 1.184 2.449 1.551 2.793 1.723.344.172.547.145.75-.086.203-.234.871-1.016 1.102-1.363.23-.348.461-.293.773-.176.312.117 1.977.934 2.316 1.105.34.172.566.258.652.402.086.145.086.844-.156 1.527z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <a href="#" class="brand" style="margin-bottom: 1rem;">
+            <div class="brand-mark">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div class="brand-title">SMART SHUTTLE <span>ADVENTURE</span></div>
+          </a>
+          <p class="footer-brand-desc">
+            Doha's distinguished luxury tourism company providing bespoke city tours, Khor Al Adaid desert safaris, and executive chauffeur experiences across the State of Qatar.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
+              WhatsApp: +974 7008 0102
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Tours -->
+        <div>
+          <h4 class="footer-col-title">Experiences</h4>
+          <ul class="footer-links">
+            <li><a href="#tours">City Tours</a></li>
+            <li><a href="#tours">Group Tours</a></li>
+            <li><a href="#tours">Private Tours</a></li>
+            <li><a href="#tours">Desert Safari Qatar</a></li>
+            <li><a href="#tours">Inland Sea Khor Al Adaid</a></li>
+            <li><a href="#tours">Airport Layover Excursions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Destinations -->
+        <div>
+          <h4 class="footer-col-title">Explore Qatar</h4>
+          <ul class="footer-links">
+            <li><a href="#explore">Doha Skyline</a></li>
+            <li><a href="#explore">Souq Waqif Heritage</a></li>
+            <li><a href="#explore">The Pearl-Qatar</a></li>
+            <li><a href="#explore">Katara Cultural Village</a></li>
+            <li><a href="#explore">Museum of Islamic Art</a></li>
+            <li><a href="#explore">National Museum of Qatar</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="footer-col-title">Direct Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+97470080102">Tel: +974 7008 0102</a></li>
+            <li><a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer">WhatsApp: +974 7008 0102</a></li>
+            <li><span style="color: var(--text-muted); font-size: 0.875rem;">Location: Doha, Qatar</span></li>
+            <li><span style="color: var(--text-muted); font-size: 0.875rem;">Availability: 24/7 VIP Concierge</span></li>
+          </ul>
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
+            <a href="#contact" class="btn btn-outline" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Reserve Tour</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Smart Shuttle Adventure. All rights reserved. Doha, Qatar.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#tours" style="color: var(--text-muted); text-decoration: none;">Tours</a>
+          <a href="#about" style="color: var(--text-muted); text-decoration: none;">About</a>
+          <a href="#gallery" style="color: var(--text-muted); text-decoration: none;">Gallery</a>
+          <a href="#contact" style="color: var(--text-muted); text-decoration: none;">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/97470080102" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.942.556 3.754 1.516 5.293L2 22l4.828-1.488a9.98 9.98 0 0 0 5.203 1.523h.004c5.535 0 10.031-4.496 10.031-10.031C22.066 6.496 17.566 2 12.031 2zm5.836 14.195c-.242.684-1.402 1.309-1.934 1.391-.496.074-1.129.105-3.664-.945-3.242-1.344-5.328-4.648-5.492-4.863-.156-.215-1.309-1.742-1.309-3.324 0-1.582.828-2.363 1.125-2.684.297-.32.652-.402.871-.402.219 0 .441.004.633.012.207.008.484-.078.754.57.281.672.961 2.348 1.047 2.52.086.172.145.375.031.602-.113.227-.172.367-.34.566-.172.199-.363.445-.516.598-.172.172-.352.359-.152.703.203.344.898 1.48 1.926 2.395 1.328 1.184 2.449 1.551 2.793 1.723.344.172.547.145.75-.086.203-.234.871-1.016 1.102-1.363.23-.348.461-.293.773-.176.312.117 1.977.934 2.316 1.105.34.172.566.258.652.402.086.145.086.844-.156 1.527z"/>
+    </svg>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Opening WhatsApp with your reservation details...</span>
+  </div>
+
+  <!-- VANILLA JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. HEADER SCROLL EFFECT
+      const header = document.getElementById('header');
+      const backToTop = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 2. MOBILE MENU DRAWER
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileClose = document.getElementById('mobileClose');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function openMobileMenu() {
+        mobileMenu.classList.add('open');
+        mobileOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        mobileOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      menuToggle.addEventListener('click', openMobileMenu);
+      mobileClose.addEventListener('click', closeMobileMenu);
+      mobileOverlay.addEventListener('click', closeMobileMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+      // 3. SCROLL REVEAL ANIMATIONS
+      const reveals = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      reveals.forEach(el => revealObserver.observe(el));
+
+      // 4. AMBIENT PARTICLES CANVAS IN HERO
+      const canvas = document.getElementById('particles-canvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        const particleCount = Math.min(Math.floor(window.innerWidth / 20), 45);
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            size: Math.random() * 2 + 0.5,
+            speedY: Math.random() * 0.4 + 0.15,
+            speedX: (Math.random() - 0.5) * 0.3,
+            opacity: Math.random() * 0.6 + 0.2
+          });
+        }
+
+        function animateParticles() {
+          ctx.clearRect(0, 0, width, height);
+          ctx.fillStyle = '#f5df88';
+
+          particles.forEach(p => {
+            ctx.globalAlpha = p.opacity;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            p.y -= p.speedY;
+            p.x += p.speedX;
+
+            if (p.y < 0) {
+              p.y = height;
+              p.x = Math.random() * width;
+            }
+            if (p.x < 0) p.x = width;
+            if (p.x > width) p.x = 0;
+          });
+
+          requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+      }
+
+      // 5. TOAST NOTIFICATION HELPER
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      let toastTimeout;
+
+      function showToast(message) {
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastMsg.textContent = message;
+        toast.classList.add('show');
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 4000);
+      }
+
+      // 6. BOOK NOW TRIGGERS FROM TOUR CARDS
+      const bookTriggers = document.querySelectorAll('.btn-book-trigger');
+      const tourTypeSelect = document.getElementById('tourType');
+      const guestNameInput = document.getElementById('guestName');
+
+      bookTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const selectedTour = btn.getAttribute('data-tour');
+          if (tourTypeSelect && selectedTour) {
+            for (let i = 0; i < tourTypeSelect.options.length; i++) {
+              if (tourTypeSelect.options[i].value === selectedTour || tourTypeSelect.options[i].text.includes(selectedTour)) {
+                tourTypeSelect.selectedIndex = i;
+                break;
+              }
+            }
+          }
+          document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+          if (guestNameInput) {
+            setTimeout(() => guestNameInput.focus(), 600);
+          }
+          showToast(`Selected "${selectedTour}". Please complete your booking details.`);
+        });
+      });
+
+      // 7. LIGHTBOX MODAL FUNCTIONALITY
+      const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxPrev = document.getElementById('lightboxPrev');
+      const lightboxNext = document.getElementById('lightboxNext');
+      let currentGalleryIndex = 0;
+
+      function updateLightbox() {
+        if (!galleryItems[currentGalleryIndex]) return;
+        const item = galleryItems[currentGalleryIndex];
+        const src = item.getAttribute('data-img') || item.querySelector('img').src;
+        const caption = item.getAttribute('data-caption') || '';
+        lightboxImg.src = src;
+        lightboxCaption.textContent = caption;
+      }
+
+      function openLightbox(index) {
+        currentGalleryIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      galleryItems.forEach((item, idx) => {
+        item.addEventListener('click', () => openLightbox(idx));
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateLightbox();
+      });
+
+      lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+        updateLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') {
+          currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+          updateLightbox();
+        }
+        if (e.key === 'ArrowRight') {
+          currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+          updateLightbox();
+        }
+      });
+
+      // 8. TESTIMONIAL CAROUSEL
+      const track = document.getElementById('testimonialTrack');
+      const slides = Array.from(track ? track.children : []);
+      const prevTestimonial = document.getElementById('prevTestimonial');
+      const nextTestimonial = document.getElementById('nextTestimonial');
+      const dotsContainer = document.getElementById('carouselDots');
+      let currentSlide = 0;
+      let autoPlayInterval;
+
+      if (track && slides.length > 0) {
+        // Create dots
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.classList.add('carousel-dot');
+          dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function goToSlide(index) {
+          currentSlide = (index + slides.length) % slides.length;
+          track.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+        }
+
+        prevTestimonial.addEventListener('click', () => {
+          goToSlide(currentSlide - 1);
+          resetAutoPlay();
+        });
+
+        nextTestimonial.addEventListener('click', () => {
+          goToSlide(currentSlide + 1);
+          resetAutoPlay();
+        });
+
+        function startAutoPlay() {
+          autoPlayInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+          }, 6000);
+        }
+
+        function resetAutoPlay() {
+          clearInterval(autoPlayInterval);
+          startAutoPlay();
+        }
+
+        startAutoPlay();
+        track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        track.addEventListener('mouseleave', startAutoPlay);
+      }
+
+      // 9. FAQ ACCORDION
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const header = item.querySelector('.faq-header');
+        const body = item.querySelector('.faq-body');
+
+        header.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+
+          // Close other accordion items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.faq-body').style.maxHeight = null;
+            }
+          });
+
+          if (!isOpen) {
+            item.classList.add('active');
+            body.style.maxHeight = body.scrollHeight + 'px';
+          } else {
+            item.classList.remove('active');
+            body.style.maxHeight = null;
+          }
+        });
+      });
+
+      // 10. BOOKING FORM SUBMISSION (DIRECT TO WHATSAPP)
+      const bookingForm = document.getElementById('bookingForm');
+      if (bookingForm) {
+        // Set default minimum date to today
+        const dateInput = document.getElementById('preferredDate');
+        if (dateInput) {
+          const today = new Date().toISOString().split('T')[0];
+          dateInput.min = today;
+          dateInput.value = today;
+        }
+
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('guestName').value.trim();
+          const phone = document.getElementById('guestPhone').value.trim();
+          const tour = document.getElementById('tourType').value;
+          const date = document.getElementById('preferredDate').value;
+          const guests = document.getElementById('guestCount').value;
+          const message = document.getElementById('guestMessage').value.trim();
+
+          if (!name || !phone || !tour || !date) {
+            showToast('Please complete all required fields (*)');
+            return;
+          }
+
+          // Build clean structured message
+          let waText = `*Smart Shuttle Adventure - Tour Reservation Inquiry*\n\n`;
+          waText += `👤 *Name:* ${name}\n`;
+          waText += `📞 *Phone/WhatsApp:* ${phone}\n`;
+          waText += `🌟 *Tour:* ${tour}\n`;
+          waText += `📅 *Preferred Date:* ${date}\n`;
+          waText += `👥 *Party Size:* ${guests}\n`;
+          if (message) {
+            waText += `📝 *Notes/Pickup:* ${message}\n`;
+          }
+          waText += `\n_Submitted via Smart Shuttle Adventure official website._`;
+
+          const encodedText = encodeURIComponent(waText);
+          const waUrl = `https://wa.me/97470080102?text=${encodedText}`;
+
+          showToast('Redirecting to WhatsApp to finalize your booking...');
+          setTimeout(() => {
+            window.open(waUrl, '_blank');
+          }, 800);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
